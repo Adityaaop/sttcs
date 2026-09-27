@@ -11,13 +11,13 @@ I built STTCS to see if we could do better using AI. It uses Multi-Agent Reinfor
 
 ```mermaid
 graph TD
-    A[Simulated Sensors] -->|Telemetry| B(FastAPI Backend)
+    A[Simulated Sensors] -->|Telemetry| B[FastAPI Backend]
     B --> C{Safety Override Layer}
-    C -->|Safe Actions Only| D[(Simulation Engine)]
+    C -->|Safe Actions Only| D[Simulation Engine]
     D --> E[Graph Neural Net]
     E --> F[RL Train Controllers]
     F -->|Speed Suggestions| C
-    D -->|Live Data (5Hz)| G[React Dashboard]
+    D -->|Live Data 5Hz| G[React Dashboard]
     H[Chaos Injector] -->|Track Blockages| D
 ```
 
