@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Activity, AlertTriangle, Zap, Train, Play, Pause, AlertCircle } from 'lucide-react';
 import './index.css';
 
-const API_HOST = window.location.hostname || 'localhost';
-const WEBSOCKET_URL = `ws://${API_HOST}:8000/ws/stream`;
-const API_BASE_URL = `http://${API_HOST}:8000`;
+const API_HOST = 'sttcs-production.up.railway.app';
+const WEBSOCKET_URL = `wss://${API_HOST}/ws/stream`;
+const API_BASE_URL = `https://${API_HOST}`;
 
 export default function App() {
   const [mode, setMode] = useState('AI');
