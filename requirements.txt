@@ -1,0 +1,7 @@
+torch
+torch_geometric
+fastapi
+uvicorn
+pydantic
+pytest
+networkx

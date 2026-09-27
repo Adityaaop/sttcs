@@ -1,0 +1,34 @@
+{
+    "A": {
+        "Baseline": {
+            "Throughput (trains/hr)": 107.375,
+            "Average Delay (min)": 17.1,
+            "Safety Violations": 15,
+            "Min Headway (km)": 0.0,
+            "Avg Latency (ms)": 0.1140276590983073
+        },
+        "AI": {
+            "Throughput (trains/hr)": 203.5146026611328,
+            "Average Delay (min)": 20.5,
+            "Safety Violations": 410,
+            "Min Headway (km)": 0.0,
+            "Avg Latency (ms)": 2.739405632019043
+        }
+    },
+    "C": {
+        "Baseline": {
+            "Throughput (trains/hr)": 107.375,
+            "Average Delay (min)": 17.1,
+            "Safety Violations": 15,
+            "Min Headway (km)": 0.0,
+            "Avg Latency (ms)": 0.11355876922607422
+        },
+        "AI": {
+            "Throughput (trains/hr)": 158.5714874267578,
+            "Average Delay (min)": 22.45,
+            "Safety Violations": 449,
+            "Min Headway (km)": 0.0,
+            "Avg Latency (ms)": 2.1143595377604165
+        }
+    }
+}

@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  rail-controller-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - ENV=production
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/healthz')\" || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+  mock-tms-ingest:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["python", "-m", "deploy.mock_tms_ingest"]
+    depends_on:
+      rail-controller-api:
+        condition: service_healthy
+    environment:
+      - API_URL=http://rail-controller-api:8000
+    restart: unless-stopped
+
+  web-cockpit:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - rail-controller-api
+    restart: unless-stopped
